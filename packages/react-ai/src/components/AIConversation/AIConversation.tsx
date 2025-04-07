@@ -29,6 +29,8 @@ interface AIConversationBaseProps
 function AIConversationBase({
   avatars,
   controls,
+  autoScroll,
+  scrollViewRef,
   ...rest
 }: AIConversationBaseProps): React.JSX.Element {
   useSetUserAgent({
@@ -69,7 +71,7 @@ function AIConversationBase({
         className={ComponentClassName.AIConversation}
         testId="ai-conversation"
       >
-        <ScrollView autoScroll="smooth" flex="1">
+        <ScrollView {...(autoScroll ? { autoScroll } : {})} flex="1">
           <DefaultMessageControl />
           <MessagesControl />
         </ScrollView>

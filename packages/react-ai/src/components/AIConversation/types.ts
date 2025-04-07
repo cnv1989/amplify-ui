@@ -48,6 +48,8 @@ export interface AIConversationProps {
   avatars?: Avatars;
   isLoading?: boolean;
   aiContext?: () => object;
+  autoScroll?: 'smooth' | 'instant' | 'auto';
+  scrollViewRef?: React.RefObject<HTMLDivElement>;
 }
 
 export interface AIConversation<
